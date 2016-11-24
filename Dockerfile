@@ -27,11 +27,11 @@ RUN dnf -y install https://raw.githubusercontent.com/UnitedRPMs/unitedrpms/maste
 		nasm \
 		opencv-devel \
 		opencv-python \
-		PyOpenGL \
 		python2-msgpack \
+		python2-pyopengl \
+		python2-scipy \
 		python-devel \
-		redhat-rpm-config \
-		scipy && \
+		redhat-rpm-config && \
 	dnf clean all
 
 WORKDIR /root/

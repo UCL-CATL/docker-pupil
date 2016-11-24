@@ -66,33 +66,15 @@ RUN pip install \
 	psutil \
 	pyzmq \
 	msgpack_python \
-	https://github.com/zeromq/pyre/archive/master.zip
+	git+https://github.com/zeromq/pyre
 
-# Install PyAV.
-RUN commit="498516d0df6080018dcfe2f234557ccfcea74435" && \
-	curl -o PyAV.tar.gz -L "https://github.com/pupil-labs/PyAV/archive/${commit}.tar.gz" && \
-	tar xf PyAV.tar.gz && \
-	cd PyAV-${commit} && \
-	python setup.py install
-
-# Install pyuvc.
-RUN version="0.7" && \
-	curl -o pyuvc.tar.gz -L "https://github.com/pupil-labs/pyuvc/archive/v${version}.tar.gz" && \
-	tar xf pyuvc.tar.gz && \
-	cd pyuvc-${version} && \
-	python setup.py install
-
-# Install pyglui.
-# It doesn't work from the tarball because there are some git submodules. So do a git clone instead.
-RUN version="0.8" && \
-	git clone http://github.com/pupil-labs/pyglui && \
-	cd pyglui && \
-	git checkout -b docker v${version} && \
-	git submodule update --init --recursive && \
-	python setup.py install
+RUN pip install git+https://github.com/pupil-labs/PyAV@498516d0df6080018dcfe2f234557ccfcea74435
+RUN pip install git+https://github.com/pupil-labs/pyuvc@022d0baeeca0dc6c2c2cb603e2a95e6ed408160b
+RUN pip install git+https://github.com/pupil-labs/pyndsi@80dad2e41e3651046dde0ec079684208c82b1ea2
+RUN pip install git+https://github.com/pupil-labs/pyglui@a7cb39f8ea644ae1424676121523c05162d66d71
 
 # Download pupil source code.
-RUN version="0.7.6" && \
+RUN version="0.8.6" && \
 	git clone https://github.com/pupil-labs/pupil && \
 	cd pupil && \
 	git checkout -b docker v${version} && \

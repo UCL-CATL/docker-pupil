@@ -27,7 +27,6 @@ RUN dnf -y install https://raw.githubusercontent.com/UnitedRPMs/unitedrpms/maste
 		nasm \
 		opencv-devel \
 		opencv-python \
-		python2-msgpack \
 		python2-pyopengl \
 		python2-scipy \
 		python-devel \
@@ -66,6 +65,7 @@ RUN pip install \
 	cython \
 	psutil \
 	pyzmq \
+	msgpack_python \
 	https://github.com/zeromq/pyre/archive/master.zip
 
 # Install PyAV.

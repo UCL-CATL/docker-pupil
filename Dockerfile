@@ -43,7 +43,7 @@ RUN curl -o libjpeg-turbo.tar.gz -L "http://sourceforge.net/projects/libjpeg-tur
 	make install
 
 # Install libuvc from git.
-RUN commit="1539f58aa46650713bbeb2d0fa811096ca59c056" && \
+RUN commit="59b7e2ef516f3c22864cc7e80a44ffc9e5fe0194" && \
 	curl -o libuvc.tar.gz -L "https://github.com/pupil-labs/libuvc/archive/${commit}.tar.gz" && \
 	tar xf libuvc.tar.gz && \
 	cd libuvc-${commit} && \
@@ -69,12 +69,12 @@ RUN pip install \
 	git+https://github.com/zeromq/pyre
 
 RUN pip install git+https://github.com/pupil-labs/PyAV@498516d0df6080018dcfe2f234557ccfcea74435
-RUN pip install git+https://github.com/pupil-labs/pyuvc@v0.9
-RUN pip install git+https://github.com/pupil-labs/pyndsi@4901771099afc5ee601e0c032ad0aba2037b0fd3
-RUN pip install git+https://github.com/pupil-labs/pyglui@v1.2
+RUN pip install git+https://github.com/pupil-labs/pyuvc@022d0baeeca0dc6c2c2cb603e2a95e6ed408160b
+RUN pip install git+https://github.com/pupil-labs/pyndsi@80dad2e41e3651046dde0ec079684208c82b1ea2
+RUN pip install git+https://github.com/pupil-labs/pyglui@a7cb39f8ea644ae1424676121523c05162d66d71
 
 # Download pupil source code.
-RUN version="0.8.7" && \
+RUN version="0.8.6" && \
 	git clone https://github.com/pupil-labs/pupil && \
 	cd pupil && \
 	git checkout -b docker v${version} && \

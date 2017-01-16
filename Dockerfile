@@ -11,20 +11,17 @@ RUN dnf -y builddep libjpeg-turbo && \
 		eigen3-devel \
 		ffmpeg \
 		ffmpeg-devel \
-		gcc-c++ \
 		gflags-devel \
 		glew-devel \
 		glfw-devel \
 		glog-devel \
 		libusb-devel \
 		mesa-libGLU-devel \
-		nasm \
 		opencv-devel \
 		opencv-python \
 		python2-pyopengl \
 		python2-scipy \
-		python-devel \
-		redhat-rpm-config && \
+		python-devel && \
 	dnf clean all
 
 WORKDIR /root/

@@ -25,5 +25,15 @@ RUN dnf -y install \
 		glew-devel \
 		glfw-devel
 
+RUN dnf -y install \
+		opencv-devel \
+		opencv-python3 \
+		boost-devel \
+		boost-python3-devel \
+		glog-devel \
+		atlas-devel \
+		eigen3-devel \
+		ceres-solver-devel
+
 # Set default command
 CMD ["/usr/bin/bash"]

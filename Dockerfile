@@ -14,5 +14,16 @@ RUN curl -o libjpeg-turbo.tar.gz -L "http://sourceforge.net/projects/libjpeg-tur
 	./configure --with-pic && \
 	make install
 
+RUN dnf -y install \
+		cmake \
+		libusb-devel \
+		python3-devel \
+		python3-numpy \
+		python3-scipy \
+		ffmpeg \
+		ffmpeg-devel \
+		glew-devel \
+		glfw-devel
+
 # Set default command
 CMD ["/usr/bin/bash"]

@@ -1,5 +1,5 @@
 # https://github.com/UCL-CATL/cosy-docker-layer
-FROM ucl-cosy/cosy-docker-layer
+FROM ucl-cosy/cosy-docker-layer:24
 
 MAINTAINER Sébastien Wilmet
 

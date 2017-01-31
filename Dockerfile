@@ -35,5 +35,20 @@ RUN dnf -y install \
 		eigen3-devel \
 		ceres-solver-devel
 
+# Install libuvc from git.
+RUN commit="ebfd4020a7f8eb78c681f3eb645107e8d562a920" && \
+	curl -o libuvc.tar.gz -L "https://github.com/pupil-labs/libuvc/archive/${commit}.tar.gz" && \
+	tar xf libuvc.tar.gz && \
+	cd libuvc-${commit} && \
+	mkdir build && \
+	cd build && \
+	cmake .. && \
+	make && \
+	make install
+
+# Workaround for libuvc cmake shenanigan.
+RUN echo "/usr/local/lib" >> /etc/ld.so.conf && \
+	ldconfig
+
 # Set default command
 CMD ["/usr/bin/bash"]

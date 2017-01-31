@@ -70,5 +70,20 @@ RUN pip3 install git+https://github.com/pupil-labs/pyuvc@318528148524bd34c092b87
 RUN pip3 install git+https://github.com/pupil-labs/pyndsi@095865f7cccaca1f5b6be1a51699d5bb16760429
 RUN pip3 install git+https://github.com/pupil-labs/pyglui@5306a0ee8932d82c4c1bd37d102b67717f8c1595
 
+RUN dnf -y install gflags-devel
+
+RUN cd /usr/lib64 && \
+	ln -s libboost_python3.so libboost_python-py35.so
+
+# Download pupil source code.
+RUN commit="0f86f7dae83a0bfdc24f51a25623bf62329efc5e" && \
+	git clone https://github.com/pupil-labs/pupil && \
+	cd pupil && \
+	git checkout -b docker ${commit} && \
+	python3 pupil_src/capture/pupil_detectors/build.py && \
+	python3 pupil_src/shared_modules/calibration_routines/optimization_calibration/build.py
+
+WORKDIR /root/pupil/
+
 # Set default command
 CMD ["/usr/bin/bash"]

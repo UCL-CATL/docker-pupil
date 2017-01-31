@@ -63,5 +63,12 @@ RUN pip3 install \
 	pyopengl \
 	git+https://github.com/zeromq/pyre
 
+RUN dnf -y install redhat-rpm-config
+
+RUN pip3 install git+https://github.com/pupil-labs/PyAV@498516d0df6080018dcfe2f234557ccfcea74435
+RUN pip3 install git+https://github.com/pupil-labs/pyuvc@318528148524bd34c092b872c646fe2fd78ffa09
+RUN pip3 install git+https://github.com/pupil-labs/pyndsi@095865f7cccaca1f5b6be1a51699d5bb16760429
+RUN pip3 install git+https://github.com/pupil-labs/pyglui@5306a0ee8932d82c4c1bd37d102b67717f8c1595
+
 # Set default command
 CMD ["/usr/bin/bash"]

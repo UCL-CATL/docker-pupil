@@ -50,5 +50,17 @@ RUN commit="ebfd4020a7f8eb78c681f3eb645107e8d562a920" && \
 RUN echo "/usr/local/lib" >> /etc/ld.so.conf && \
 	ldconfig
 
+# Install some Python packages.
+RUN pip3 install --upgrade pip
+
+RUN pip3 install \
+	numexpr \
+	cython \
+	psutil \
+	pyzmq \
+	msgpack_python \
+	pyopengl \
+	git+https://github.com/zeromq/pyre
+
 # Set default command
 CMD ["/usr/bin/bash"]

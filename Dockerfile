@@ -29,11 +29,12 @@ RUN dnf -y builddep libjpeg-turbo && \
 	dnf clean all
 
 # Install libjpeg-turbo from sources to use the --with-pic flag.
-RUN curl -o libjpeg-turbo.tar.gz -L "http://sourceforge.net/projects/libjpeg-turbo/files/1.4.2/libjpeg-turbo-1.4.2.tar.gz/download" && \
+RUN curl -o libjpeg-turbo.tar.gz -L "https://sourceforge.net/projects/libjpeg-turbo/files/1.5.1/libjpeg-turbo-1.5.1.tar.gz/download" && \
 	tar xf libjpeg-turbo.tar.gz && \
-	cd libjpeg-turbo-1.4.2 && \
-	./configure --with-pic && \
-	make install
+	cd libjpeg-turbo-1.5.1 && \
+	./configure --with-pic --prefix=/usr/local && \
+	make install && \
+	ldconfig
 
 # Install libuvc from git.
 RUN commit="ebacefa2a4d00970e00414b2e52b3f1511d83389" && \

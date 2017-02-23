@@ -36,7 +36,7 @@ RUN curl -o libjpeg-turbo.tar.gz -L "http://sourceforge.net/projects/libjpeg-tur
 	make install
 
 # Install libuvc from git.
-RUN commit="ebfd4020a7f8eb78c681f3eb645107e8d562a920" && \
+RUN commit="ebacefa2a4d00970e00414b2e52b3f1511d83389" && \
 	curl -o libuvc.tar.gz -L "https://github.com/pupil-labs/libuvc/archive/${commit}.tar.gz" && \
 	tar xf libuvc.tar.gz && \
 	cd libuvc-${commit} && \
@@ -62,8 +62,8 @@ RUN pip3 install \
 	git+https://github.com/zeromq/pyre
 
 RUN pip3 install git+https://github.com/pupil-labs/PyAV@498516d0df6080018dcfe2f234557ccfcea74435
-RUN pip3 install git+https://github.com/pupil-labs/pyuvc@318528148524bd34c092b872c646fe2fd78ffa09
-RUN pip3 install git+https://github.com/pupil-labs/pyndsi@095865f7cccaca1f5b6be1a51699d5bb16760429
+RUN pip3 install git+https://github.com/pupil-labs/pyuvc@b73059d5e95387bd09c3bfe2df0f7fd50053e13c
+RUN pip3 install git+https://github.com/pupil-labs/pyndsi@ba23d904c0de05947d5aa427a004111a1afb569c
 RUN pip3 install git+https://github.com/pupil-labs/pyglui@5306a0ee8932d82c4c1bd37d102b67717f8c1595
 
 # When running the build.py of pupil below, it tries to link with
@@ -72,10 +72,10 @@ RUN cd /usr/lib64 && \
 	ln -s libboost_python3.so libboost_python-py35.so
 
 # Download pupil source code.
-RUN commit="0f86f7dae83a0bfdc24f51a25623bf62329efc5e" && \
+RUN version="v0.9.1" && \
 	git clone https://github.com/pupil-labs/pupil && \
 	cd pupil && \
-	git checkout -b docker ${commit} && \
+	git checkout -b docker ${version} && \
 	python3 pupil_src/capture/pupil_detectors/build.py && \
 	python3 pupil_src/shared_modules/calibration_routines/optimization_calibration/build.py
 

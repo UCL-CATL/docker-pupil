@@ -62,9 +62,9 @@ RUN pip3 install \
 	pyopengl \
 	git+https://github.com/zeromq/pyre
 
-RUN pip3 install git+https://github.com/pupil-labs/PyAV@498516d0df6080018dcfe2f234557ccfcea74435
-RUN pip3 install git+https://github.com/pupil-labs/pyuvc@b73059d5e95387bd09c3bfe2df0f7fd50053e13c
-RUN pip3 install git+https://github.com/pupil-labs/pyndsi@ba23d904c0de05947d5aa427a004111a1afb569c
+RUN pip3 install git+https://github.com/pupil-labs/PyAV@c167799b4213c69791e696cfca883d14605a0a93
+RUN pip3 install git+https://github.com/pupil-labs/pyuvc@v0.10
+RUN pip3 install git+https://github.com/pupil-labs/pyndsi@v0.2.14
 RUN pip3 install git+https://github.com/pupil-labs/pyglui@5306a0ee8932d82c4c1bd37d102b67717f8c1595
 
 # When running the build.py of pupil below, it tries to link with
@@ -73,7 +73,7 @@ RUN cd /usr/lib64 && \
 	ln -s libboost_python3.so libboost_python-py35.so
 
 # Download pupil source code.
-RUN version="v0.9.1" && \
+RUN version="v0.9.2" && \
 	git clone https://github.com/pupil-labs/pupil && \
 	cd pupil && \
 	git checkout -b docker ${version} && \

@@ -39,4 +39,4 @@ docker run -it --rm \
 	--volume $XSOCK:$XSOCK \
 	--volume $XAUTH:$XAUTH --env XAUTHORITY=$XAUTH \
 	--volume $recordings_dir:/root/pupil/recordings \
-	ucl-cosy/pupil-fedora:f25-v0.9.1
+	ucl-cosy/pupil-fedora:f25-v0.9.2

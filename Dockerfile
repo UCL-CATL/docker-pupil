@@ -73,7 +73,7 @@ RUN cd /usr/lib64 && \
 	ln -s libboost_python3.so libboost_python-py35.so
 
 # Download pupil source code.
-RUN version="v0.9.2" && \
+RUN version="v0.9.3" && \
 	git clone https://github.com/pupil-labs/pupil && \
 	cd pupil && \
 	git checkout -b docker ${version} && \

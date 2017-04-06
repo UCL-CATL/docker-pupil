@@ -1,3 +1,10 @@
-News in 2.0, 2016-mm-dd
+News in 2.0, 2017-04-06
 -----------------------
-* Update to Fedora 24
+* Update to Pupil 0.9.3.
+* Update to Fedora 25 with cosy-docker-layer.
+
+News in 1.0, 2016-05-26
+-----------------------
+* First version of docker-pupil used in production.
+* Pupil 0.7.6.
+* Fedora 23.

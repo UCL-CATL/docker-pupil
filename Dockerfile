@@ -84,3 +84,6 @@ WORKDIR /root/pupil/
 
 # Set default command
 CMD ["/usr/bin/bash"]
+
+ADD user_settings_world /root/pupil/capture_settings/user_settings_world
+ADD user_settings_eye0 /root/pupil/capture_settings/user_settings_eye0

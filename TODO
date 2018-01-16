@@ -1,0 +1,11 @@
+docker-pupil - TODO
+===================
+
+Create a container based on Ubuntu instead of Fedora, to install the *.deb
+package already packaged by the upstream Pupil developers.
+
+Instead of Docker, maybe use mkosi + systemd-nspawn, and rename this git repo
+to container-pupil. Some links:
+http://0pointer.net/blog/mkosi-a-tool-for-generating-os-images.html
+http://0pointer.net/blog/systemd-for-administrators-part-xxi.html
+https://ramsdenj.com/2016/09/23/containerizing-graphical-applications-on-linux-with-systemd-nspawn.html

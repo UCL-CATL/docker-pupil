@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker build --rm --tag ucl-cosy/pupil-fedora:f25-v0.9.3 .
+docker build --rm --tag ucl-cosy/ubuntu-pupil:u16.04-p1.2 .

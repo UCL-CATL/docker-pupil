@@ -4,6 +4,7 @@ MAINTAINER Sébastien Wilmet
 
 WORKDIR /root/
 
+# Have a more comfortable command-line environment.
 RUN apt-get update && \
 	apt-get -y upgrade && \
 	apt-get -y install \
@@ -11,22 +12,18 @@ RUN apt-get update && \
 		ubuntu-standard
 
 # There is apparently no metapackage to install a minimal desktop system. So
-# install a small GUI app instead.
+# install the whole default Ubuntu desktop, to be sure that all dependencies
+# are installed.
 RUN apt-get update && \
-	apt-get -y install leafpad
+	DEBIAN_FRONTEND=noninteractive apt-get -y install ubuntu-desktop
 
-# Install packages required to install Pupil Capture.
+# Install additional packages required to install Pupil Capture.
 RUN apt-get update && \
 	apt-get -y install unzip
 
 RUN wget https://github.com/pupil-labs/pupil/releases/download/v1.2/pupil_v1.2-7_usb_fix_linux_x64.zip && \
-	unzip pupil_v1.2-7_usb_fix_linux_x64.zip
-
-RUN apt-get -y install udev
-RUN dpkg -i pupil_capture_linux_os_x64_v1.2-7.deb
-
-# I abandon, there are lots of missing deps.
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install ubuntu-desktop
+	unzip pupil_v1.2-7_usb_fix_linux_x64.zip && \
+	dpkg -i pupil_capture_linux_os_x64_v1.2-7.deb
 
 # Set default command
 CMD ["/bin/bash"]

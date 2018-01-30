@@ -39,4 +39,4 @@ docker run -it --rm \
 	--volume $XSOCK:$XSOCK \
 	--volume $XAUTH:$XAUTH --env XAUTHORITY=$XAUTH \
 	--volume $recordings_dir:/root/pupil/recordings \
-	ucl-cosy/ubuntu-pupil:u16.04-p1.2
+	ucl-cosy/ubuntu-pupil:u17.10-p1.2

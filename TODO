@@ -1,6 +1,8 @@
 docker-pupil - TODO
 ===================
 
+run.sh: check if the --volume param for recordings_dir is still correct.
+
 Instead of Docker, maybe use mkosi + systemd-nspawn, and rename this git repo
 to container-pupil. Some links:
 http://0pointer.net/blog/mkosi-a-tool-for-generating-os-images.html

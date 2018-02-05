@@ -1,6 +1,9 @@
 Host configuration
 ==================
 
+FIXME: the information in this file may be obsolete, test with the latest
+version to see if there is still the same problem.
+
 The host OS needs some configuration.
 
 The provided webcams with the Pupil hardware don't work well with the Linux

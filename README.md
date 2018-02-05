@@ -1,13 +1,8 @@
 docker-pupil
 ============
 
-Fedora Dockerfile for the [Pupil](https://pupil-labs.com/) eye tracking
+Ubuntu Docker container for the [Pupil](https://pupil-labs.com/) eye tracking
 software.
-
-Installing the Pupil software from the sources involves quite [a lot of
-steps](https://github.com/pupil-labs/pupil/wiki/Dependencies-Installation-Linux).
-Instead of needing to re-do these steps on a new system, the Dockerfile
-provided here is a Docker container definition file.
 
 A container provides several benefits:
 - The installation steps are described in a Git repository, with the history,
@@ -25,14 +20,12 @@ A container provides several benefits:
 - What is installed in production will be as similar as possible to what the
   developers have tested.
 
-This Dockerfile doesn't try to install the bare minimum dependencies. But it's
+The Dockerfile doesn't try to install the bare minimum dependencies. But it's
 already a good basis to work with the Pupil platform with a container.
 
 More information:
 - [Pupil](https://pupil-labs.com/)
 - [Docker](https://www.docker.com/)
-- [Fedora](https://getfedora.org/)
-- [Docker in Fedora](https://developer.fedoraproject.org/)
 
 Host configuration
 ------------------

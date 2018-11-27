@@ -1,6 +1,4 @@
-docker-pupil - TODO
-===================
+container-pupil - TODO
+======================
 
 run.sh: check if the --volume param for recordings_dir is still correct.
-
-Instead of Docker, use Podman and rename this git repo to container-pupil.

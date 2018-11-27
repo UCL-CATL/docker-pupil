@@ -27,16 +27,18 @@ else
 	recordings_dir=$1
 fi
 
+mkdir -p "$recordings_dir"
+
 XSOCK=/tmp/.X11-unix
-XAUTH=/tmp/.docker.xauth
+XAUTH=/tmp/.podman.xauth
 > $XAUTH
 xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 
-docker run -it --rm \
+podman run -it --rm \
 	--privileged \
 	--net=host \
 	--env DISPLAY=$DISPLAY \
 	--volume $XSOCK:$XSOCK \
 	--volume $XAUTH:$XAUTH --env XAUTHORITY=$XAUTH \
 	--volume $recordings_dir:/root/pupil/recordings \
-	ucl-cosy/ubuntu-pupil:u17.10-p1.2
+	'uclouvain-ions/ubuntu-pupil:u17.10-p1.2'

@@ -1,4 +1,4 @@
-FROM ubuntu:17.10
+FROM ubuntu:18.04
 
 MAINTAINER Sébastien Wilmet
 
@@ -21,9 +21,9 @@ RUN apt-get update && \
 RUN apt-get update && \
 	apt-get -y install unzip
 
-RUN wget https://github.com/pupil-labs/pupil/releases/download/v1.2/pupil_v1.2-7_usb_fix_linux_x64.zip && \
-	unzip pupil_v1.2-7_usb_fix_linux_x64.zip && \
-	dpkg -i pupil_capture_linux_os_x64_v1.2-7.deb
+RUN wget https://github.com/pupil-labs/pupil/releases/download/v1.9/pupil_v1.9-7-gdf51687_linux_x64.zip && \
+	unzip pupil_v1.9-7-gdf51687_linux_x64.zip && \
+	dpkg -i pupil_v1.9-7-gdf51687_linux_x64/pupil_capture_linux_os_x64_v1.9-7-gdf51687.deb
 
 # Set default command
 CMD ["/bin/bash"]

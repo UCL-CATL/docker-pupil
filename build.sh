@@ -1,3 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-docker build --rm --tag ucl-cosy/ubuntu-pupil:u17.10-p1.2 .
+# In the tag name, the u and p versions are the versions of Ubuntu and Pupil.
+podman build --tag 'uclouvain-ions/ubuntu-pupil:u17.10-p1.2' .

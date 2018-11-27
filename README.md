@@ -1,8 +1,7 @@
-docker-pupil
-============
+container-pupil
+===============
 
-Ubuntu Docker container for the [Pupil](https://pupil-labs.com/) eye tracking
-software.
+Linux container for the [Pupil](https://pupil-labs.com/) eye tracking software.
 
 A container provides several benefits:
 - The installation steps are described in a Git repository, with the history,
@@ -16,32 +15,32 @@ A container provides several benefits:
   it will still work in the future, since the state of the container can be
   reset each time the container is run. On a traditional OS, your software may
   work thanks to some state of the system. Here everything is described in Git.
-- The container can run on different Linux distros.
+- The container can run on different Linux distributions.
 - What is installed in production will be as similar as possible to what the
   developers have tested.
 
-The Dockerfile doesn't try to install the bare minimum dependencies. But it's
-already a good basis to work with the Pupil platform with a container.
-
 More information:
 - [Pupil](https://pupil-labs.com/)
-- [Docker](https://www.docker.com/)
-
-Host configuration
-------------------
-
-See the `host-config` file.
+- [Podman](https://podman.io/)
 
 Build the container image
 -------------------------
 
-    # ./build.sh
+As root:
+```
+# ./build.sh
+```
 
 Run the container
 -----------------
 
-    # ./run.sh
+As root:
+```
+# ./run.sh
+```
 
 or
 
-    # ./run.sh /path/where/recordings/should/be/saved
+```
+# ./run.sh /path/where/recordings/should/be/saved
+```

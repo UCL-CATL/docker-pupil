@@ -19,7 +19,9 @@
 #   device, etc.
 # - net=host: to configure more easily the IP address and port of the Pupil
 #   Broadcast Server.
-# - DISPLAY, XSOCK and XAUTH: needed for a GUI application.
+# - DISPLAY, XSOCK and XAUTH: needed for a GUI application. Trick found at:
+#   http://stackoverflow.com/questions/16296753/can-you-run-gui-apps-in-a-docker-container
+#   (answer by Jürgen Weigert)
 
 if [ "$#" -lt "1" ]; then
 	recordings_dir=~/pupil/recordings

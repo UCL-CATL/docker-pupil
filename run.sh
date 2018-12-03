@@ -43,5 +43,5 @@ podman run -it --rm \
 	--env DISPLAY=$DISPLAY \
 	--volume $XSOCK:$XSOCK \
 	--volume $XAUTH:$XAUTH --env XAUTHORITY=$XAUTH \
-	--volume $recordings_dir:/root/pupil/recordings \
+	--volume $recordings_dir:/root/recordings \
 	'uclouvain-ions/ubuntu-pupil:u18.04-p1.9'

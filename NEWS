@@ -1,5 +1,15 @@
+News in 3.0, YYYY-MM-DD (not yet released)
+-----------------------
+* Base the container on Ubuntu, to just install the *.deb package provided by
+  the upstream developers.
+* Use Podman instead of Docker (it still uses the same Dockerfile).
+  Podman is more modern, has better performances, and is easier to install (no
+  additional daemon is needed).
+* Versions: Ubuntu 18.04 and Pupil 1.9.
+
 News in 2.0, 2017-04-06
 -----------------------
+* Second version used in production.
 * Update to Pupil 0.9.3.
 * Update to Fedora 25 with cosy-docker-layer.
 

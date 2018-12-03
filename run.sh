@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Usages:
 # ./run.sh
@@ -23,7 +23,8 @@
 #   http://stackoverflow.com/questions/16296753/can-you-run-gui-apps-in-a-docker-container
 #   (answer by Jürgen Weigert)
 
-if [ "$#" -lt "1" ]; then
+if test $# -lt 1
+then
 	recordings_dir=~/pupil/recordings
 else
 	recordings_dir=$1

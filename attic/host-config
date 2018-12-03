@@ -1,8 +1,9 @@
 Host configuration
 ==================
 
-FIXME: the information in this file may be obsolete, test with the latest
-version to see if there is still the same problem.
+*Update*: it seems that the Pupil Capture application works fine even if the
+host OS is not configured with the fix explained below. So I think we can now
+ignore the information in this file.
 
 The host OS needs some configuration.
 

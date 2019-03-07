@@ -23,6 +23,11 @@ More information:
 - [Pupil](https://pupil-labs.com/)
 - [Podman](https://podman.io/)
 
+The software in this repository is developed by the
+[Institute of NeuroScience](https://uclouvain.be/en/research-institutes/ions),
+[UCLouvain](https://uclouvain.be/en/),
+Belgium.
+
 Build the container image
 -------------------------
 
